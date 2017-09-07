@@ -1,11 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>The Zemer Col</title>
+<title>The Cemer-Kol</title>
 <link rel="stylesheet" type="text/css" href="my.css" />
+
 <style type="text/css">
-.price-list-table{width: 653px; padding: 30px 0 0;}
+.price-list-table{
+	width: 653px;
+}
  .price-list-table-top,
  .price-list-table-bot
  {
@@ -32,7 +35,13 @@
 	padding-right: 75px;
 	background-color: #D4C4C4;
 }
-.price-list-table-mid{width: 633px; padding: 0 9px; background-color: white; border-left: 1px solid #e5e5e5; border-right: 1px solid #e5e5e5;}
+.price-list-table-mid{
+	width: 633px;
+	padding: 0 9px;
+	background-color: white;
+	border-left: 1px solid #e5e5e5;
+	border-right: 1px solid #e5e5e5;
+}
  .price-item
  {
   padding: 3px 0 3px;
@@ -45,8 +54,17 @@
  font-size: 0.95em;
  margin-bottom: 1px;
 }
-.price-item-details{float: right; width: 458px; padding: 0 15px 0 0; margin-right: -5px; }
-.price-item-price{float: right; font-weight: bold;width:134px;text-align:left}
+.price-item-details{
+	float: right;
+	width: 458px;
+	padding: 0 15px 0 0;
+	margin-right: -5px;
+}
+.price-item-price{
+	float: right;
+	font-weight: bold;
+	width:134px;
+	text-align:left}
 .clear
 {
  clear: both;
@@ -54,36 +72,23 @@
  font-size: 2px;
  line-height: 2px !important;
 }
-.price-item-last{background: none; padding: 8px 0 9px; color: #3C3C3C; font-size: 0.95em;}
-.price-list-table-bot{width: 653px; height: 5px; background: url("/Hebrew/images/pricelist-sprite.png") left -25px no-repeat; font-size: 1px; line-height: 1px; }
+.price-item-last{
+	background: none;
+	padding: 8px 0 9px;
+	color: #3C3C3C;
+	font-size: 0.95em;
+}
+.price-list-table-bot{
+	width: 653px; height: 5px;
+	background: url("/Hebrew/images/pricelist-sprite.png") left -25px no-repeat;
+	font-size: 1px;
+	line-height: 1px;
+}
 </style>
-<script type="text/javascript">
-<!--
-function FP_swapImg() {//v1.0
- var doc=document,args=arguments,elm,n; doc.$imgSwaps=new Array(); for(n=2; n<args.length;
- n+=2) { elm=FP_getObjectByID(args[n]); if(elm) { doc.$imgSwaps[doc.$imgSwaps.length]=elm;
- elm.$src=elm.src; elm.src=args[n+1]; } }
-}
 
-function FP_preloadImgs() {//v1.0
- var d=document,a=arguments; if(!d.FP_imgs) d.FP_imgs=new Array();
- for(var i=0; i<a.length; i++) { d.FP_imgs[i]=new Image; d.FP_imgs[i].src=a[i]; }
-}
-
-function FP_getObjectByID(id,o) {//v1.0
- var c,el,els,f,m,n; if(!o)o=document; if(o.getElementById) el=o.getElementById(id);
- else if(o.layers) c=o.layers; else if(o.all) el=o.all[id]; if(el) return el;
- if(o.id==id || o.name==id) return o; if(o.childNodes) c=o.childNodes; if(c)
- for(n=0; n<c.length; n++) { el=FP_getObjectByID(id,c[n]); if(el) return el; }
- f=o.forms; if(f) for(n=0; n<f.length; n++) { els=f[n].elements;
- for(m=0; m<els.length; m++){ el=FP_getObjectByID(id,els[n]); if(el) return el; } }
- return null;
-}
-// -->
-</script>
 </head>
 
-<body background="Images/grey005.gif" marginwidth="500" onload="FP_preloadImgs(/*url*/'button42.jpg',/*url*/'button43.jpg')" >
+<body>
 
 <table width="100%" height="30" border="6" align="center" id="Table1" bordercolor="#FFFEA7">
   <tr bgcolor="#AD8BC3"> <!-- #7F7F7F -->
@@ -96,13 +101,13 @@ function FP_getObjectByID(id,o) {//v1.0
 
 <!--------------------------------Menu------------------------------------------------->
 <div align="center">
- <body link="black" vlink="black" alink="white";>
-  <!--<p align="center" style="font-family:verdana;color:black;font-size:20px;"> <strong>-->
-   <span class="my_menu">
-    <a href="#mehiron">מחירון</a> | <a href="index.html#shaot">שעות עבודה</a> | <a href="index.html#megiim">איך מגיעים</a> | <a href="index.html#aleynu">עלינו</a> | 
-    <a href="tmunot.html">תמונות</a> | <a href="index.html#phone">צור קשר</a>
-   </span></strong></p>
- </body> 
+	<body link="black" vlink="black" alink="white";>
+	<!--<p align="center" style="font-family:verdana;color:black;font-size:20px;"> <strong>-->
+	<span class="my_menu">
+     <a href="#">מחירון</a> | <a href="index.html#shaot">שעות עבודה</a> | <a href="index.html#megiim">איך מגיעים</a> | <a href="index.html#aleynu">עלינו</a> | <a href="tmunot.html">תמונות</a> | <a href="index.html#phone">צור קשר</a>
+    </span>
+	<!--</strong></p>-->
+	</body>
 </div>
 <!------------------------------------------------------------------------------------->
 
@@ -520,12 +525,14 @@ function FP_getObjectByID(id,o) {//v1.0
 	 <div class="price-list-table-bot">
 		 &nbsp;</div>
  </div>
-        <p><a href="#mehiron">
-		<img id="img1" alt="להתחלת העמוד" height="20" onmousedown="FP_swapImg(1,0,/*id*/'img1',/*url*/'button43.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img1',/*url*/'button41.jpg')" onmouseover="FP_swapImg(1,0,/*id*/'img1',/*url*/'button42.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img1',/*url*/'button42.jpg')" src="button41.jpg" style="border: 0" width="100" /><!-- MSComment="ibutton" fp-style="fp-btn: Braided Row 1" fp-title="להתחלת העמוד" --></a></p>
+
+	<p align="center" style="clear: both;">
+		<a href="#" class="to_page_top">להתחלת העמוד</a>
+	</p>
+
 </div>
 <hr color="black"/>
 
-
-<p align="center" style="color:black; font-family:tahoma; font-size:10pt" >Slava Sanin @ 2014 :אתר נבנה עלידי</p>
+<footer>Slava Sanin @ 2014 :אתר נבנה עלידי</footer>
 </body>
 </html>
