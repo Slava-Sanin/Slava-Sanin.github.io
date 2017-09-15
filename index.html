@@ -1,4 +1,6 @@
-<html lang="en" xmlns:fb="http://ogp.me/ns/fb#"><head prefix="og: http://ogp.me/ns# object: http://ogp.me/ns/object#">
+<html lang="en" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head prefix="og: http://ogp.me/ns# object: http://ogp.me/ns/object#">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans|Istok+Web:700&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic&amp;subset=latin,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -62,7 +64,10 @@
     <link href="/css/alertify.css" rel="stylesheet">
 
 
-    <script type="text/javascript" async="" src="http://cdn.mxpnl.com/libs/mixpanel-2.2.min.js"></script><script type="text/javascript" async="" src="http://mc.yandex.ru/metrika/watch.js"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" async="" src="http://cdn.mxpnl.com/libs/mixpanel-2.2.min.js"></script>
+    <script type="text/javascript" async="" src="http://cdn.mxpnl.com/libs/mixpanel-2.2.min.js"></script>
+    <script type="text/javascript" async="" src="http://mc.yandex.ru/metrika/watch.js"></script>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+    <script type="text/javascript" async="" src="http://cdn.mxpnl.com/libs/mixpanel-2.2.min.js"></script>
     <script type="text/javascript" async="" src="http://mc.yandex.ru/metrika/watch.js"></script>
     <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
     <script type="text/javascript" async="" src="http://cdn.mxpnl.com/libs/mixpanel-2.2.min.js"></script>
@@ -195,7 +200,8 @@
     <link type="text/css" rel="stylesheet" href="https://usocial.pro/usocial/css/uscl.css?v=6.1.4">
     <link type="text/css" rel="stylesheet" href="https://usocial.pro/usocial/css/uscl.css?v=6.1.4">
     <link type="text/css" rel="stylesheet" href="https://usocial.pro/usocial/css/uscl.css?v=6.1.4">
-<link type="text/css" rel="stylesheet" href="https://usocial.pro/usocial/css/uscl.css?v=6.1.4"></head>
+    <link type="text/css" rel="stylesheet" href="https://usocial.pro/usocial/css/uscl.css?v=6.1.4">
+</head>
 
 <body data-apps-theme="t5" data-bg_type="fit" style="background-color: rgba(0,0,0,1);">
 
@@ -285,6 +291,52 @@
                 #qrcode {
                     display: none;
                 }
+                #profile .profile-tags:before {
+                    content: "";
+                    border-radius: 50%;
+                    height: 22px;
+                    width: 22px;
+                    display: block;
+                    /*                    position: absolute;*/
+                    top: 1px;
+                    left: 0;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    background-image: url(img/icons/uidme-sprite.png);
+                    background-repeat: no-repeat;
+                }
+                #profile_birthday:before {
+                    background-position: -13px -15px;
+                }
+                #profile_places:before {
+                    background-position: -114px -15px;
+                }
+                #profile_education:before {
+                    background-position: -63px -15px;
+                }
+                #profile_tags:before {
+                    background-position: -214px -14px;
+                }
+                #profile-email:before {
+                    background-position: -263px -15px;
+                }
+                #profile-phone:before {
+                    background-position: -314px -16px;
+                }
+                #profile-skype:before {
+                    background-position: -413px -15px;
+                }
+                #profile-gtalk:before {
+                    background-position: -463px -15px;
+                }
+            }
+            
+            @media screen and (min-width: 640px) *,
+             ::before,
+             ::after {
+                margin: 0;
+                transition-property: none;
+                transition-duration: .2s;
+                transition-timing-function: linear;
             }
 
         </style>
@@ -309,7 +361,7 @@
                 <h1 id="profile_name" class="black_shadow" itemprop="name">Slava Sanin</h1>
 
                 <h2 id="profile_headline" class="black_shadow">Programmer / System Administrator / PC Technic</h2>
-                
+
 
                 <div id="profile_bio" class="black_shadow" itemprop="description" style="color:rgba(247,240,225,1);font-size:16px;font-family:Arial;">
                     <hr>
@@ -384,152 +436,153 @@
                 </div>
                 <hr>
 
-<div id="list_my-sites" class="profile-bevel black_shadow">
-			<ul>
-						<li class="site-link">
-						<div class="link-favicon" style="background-image: url(/img/favicons/f2d5255cb9cd2f547a04dafe2b8d74ba.ico)"></div>
-							<a href="http://pc-technic.narod.ru/cv/slava-sanin-cv.pdf" class="link-content" target="_blank" itemprop="url">pc-technic.narod.ru/cv/slava-sanin-cv.pdf</a>
-						</li>
-						<li class="site-link">
-						<div class="link-favicon" style="background-image: url(/img/favicons/f2d5255cb9cd2f547a04dafe2b8d74ba.ico)"></div>
-							<a href="http://pc-technic.narod.ru/cv/slava-sanin-cv.docx" class="link-content" target="_blank" itemprop="url">pc-technic.narod.ru/cv/slava-sanin-cv.docx</a>
-						</li>
-						<li class="site-link">
-						<div class="link-favicon" style="background-image: url(/img/favicons/f2d5255cb9cd2f547a04dafe2b8d74ba.ico)"></div>
-							<a href="http://pc-technic.narod.ru/cv/G4W-Project/G4W_Project.pdf" class="link-content" target="_blank" itemprop="url">pc-technic.narod.ru/cv/G4W-Project/G4W_Project.pdf</a>
-						</li>
-						<li class="site-link">
-						<div class="link-favicon" style="background-image: url(/img/favicons/f2d5255cb9cd2f547a04dafe2b8d74ba.ico)"></div>
-							<a href="http://pc-technic.narod.ru/cv/docs/all_diplomas_marked.pdf" class="link-content" target="_blank" itemprop="url">pc-technic.narod.ru/cv/docs/all_diplomas_marked.pdf</a>
-						</li>
-						<li class="site-link">
-						<div class="link-favicon" style="background-image: url(/img/favicons/99cd2175108d157588c04758296d1cfc.ico)"></div>
-							<a href="https://github.com/Slava-Sanin" class="link-content" target="_blank" itemprop="url">github.com/Slava-Sanin</a>
-						</li>
-						<li class="site-link">
-						<div class="link-favicon" style="background-image: none"></div>
-							<a href="http://soc-spo-rot.com" class="link-content" target="_blank" itemprop="url">soc-spo-rot.com</a>
-						</li>
-						<li class="site-link">
-						<div class="link-favicon" style="background-image: none"></div>
-							<a href="https://slava-sanin.github.io/Cemer-Kol" class="link-content" target="_blank" itemprop="url">slava-sanin.github.io/Cemer-Kol</a>
-						</li>
-						<li class="site-link">
-						<div class="link-favicon" style="background-image: none"></div>
-							<a href="https://slava-sanin.github.io/Virtual-Market" class="link-content" target="_blank" itemprop="url">slava-sanin.github.io/Virtual-Market</a>
-						</li>
-						<li class="site-link">
-						<div class="link-favicon" style="background-image: url(/img/favicons/f2d5255cb9cd2f547a04dafe2b8d74ba.ico)"></div>
-							<a href="http://pc-technic.narod.ru" class="link-content" target="_blank" itemprop="url">pc-technic.narod.ru</a>
-						</li>
-						<li class="site-link">
-						<div class="link-favicon" style="background-image: none"></div>
-							<a href="http://www.freelancerim.co.il/Freelancers/PublicProfile/slava.sanin" class="link-content" target="_blank" itemprop="url">www.freelancerim.co.il/Freelancers/PublicProfile/slava.sanin</a>
-						</li>
-			</ul>
-		</div>                </div>
-                <div class="clear"></div>
-
-                <div id="bottom-indent"></div>
-            </div>
-        </div>
-        <div id="reopen_logs" class="reopen_logs reopen-anim"></div>
-
-        <script type="text/javascript">
-            window.def_location_id = "";
-            window.def_location_name = "";
-
-        </script>
-
-
-        <div style="display: none; z-index: 1000; outline: 0px; " class="ui-dialog ui-widget ui-widget-content ui-corner-all avatar" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-large_avatar_container">
-            <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
-                <span class="ui-dialog-title" id="ui-dialog-title-large_avatar_container">&nbsp;</span>
-                <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button">
-                    <span class="ui-icon ui-icon-closethick">Close</span>
-                </a>
-            </div>
-            <div id="large_avatar_container" class="container avatar-large invisible ui-dialog-content ui-widget-content" style="display: block; ">
-                <img src="/img/avatar/r/c/k/full_snqqjbn9.jpg" id="avatar_picture" alt="Slava  Sanin (slava1974)">
-                <div id="large_avatar-overlay">
-                    <p></p>
+                <div id="list_my-sites" class="profile-bevel black_shadow">
+                    <ul>
+                        <li class="site-link">
+                            <div class="link-favicon" style="background-image: url(/img/favicons/f2d5255cb9cd2f547a04dafe2b8d74ba.ico)"></div>
+                            <a href="http://pc-technic.narod.ru/cv/slava-sanin-cv.pdf" class="link-content" target="_blank" itemprop="url">pc-technic.narod.ru/cv/slava-sanin-cv.pdf</a>
+                        </li>
+                        <li class="site-link">
+                            <div class="link-favicon" style="background-image: url(/img/favicons/f2d5255cb9cd2f547a04dafe2b8d74ba.ico)"></div>
+                            <a href="http://pc-technic.narod.ru/cv/slava-sanin-cv.docx" class="link-content" target="_blank" itemprop="url">pc-technic.narod.ru/cv/slava-sanin-cv.docx</a>
+                        </li>
+                        <li class="site-link">
+                            <div class="link-favicon" style="background-image: url(/img/favicons/f2d5255cb9cd2f547a04dafe2b8d74ba.ico)"></div>
+                            <a href="http://pc-technic.narod.ru/cv/G4W-Project/G4W_Project.pdf" class="link-content" target="_blank" itemprop="url">pc-technic.narod.ru/cv/G4W-Project/G4W_Project.pdf</a>
+                        </li>
+                        <li class="site-link">
+                            <div class="link-favicon" style="background-image: url(/img/favicons/f2d5255cb9cd2f547a04dafe2b8d74ba.ico)"></div>
+                            <a href="http://pc-technic.narod.ru/cv/docs/all_diplomas_marked.pdf" class="link-content" target="_blank" itemprop="url">pc-technic.narod.ru/cv/docs/all_diplomas_marked.pdf</a>
+                        </li>
+                        <li class="site-link">
+                            <div class="link-favicon" style="background-image: url(/img/favicons/99cd2175108d157588c04758296d1cfc.ico)"></div>
+                            <a href="https://github.com/Slava-Sanin" class="link-content" target="_blank" itemprop="url">github.com/Slava-Sanin</a>
+                        </li>
+                        <li class="site-link">
+                            <div class="link-favicon" style="background-image: none"></div>
+                            <a href="http://soc-spo-rot.com" class="link-content" target="_blank" itemprop="url">soc-spo-rot.com</a>
+                        </li>
+                        <li class="site-link">
+                            <div class="link-favicon" style="background-image: none"></div>
+                            <a href="https://slava-sanin.github.io/Cemer-Kol" class="link-content" target="_blank" itemprop="url">slava-sanin.github.io/Cemer-Kol</a>
+                        </li>
+                        <li class="site-link">
+                            <div class="link-favicon" style="background-image: none"></div>
+                            <a href="https://slava-sanin.github.io/Virtual-Market" class="link-content" target="_blank" itemprop="url">slava-sanin.github.io/Virtual-Market</a>
+                        </li>
+                        <li class="site-link">
+                            <div class="link-favicon" style="background-image: url(/img/favicons/f2d5255cb9cd2f547a04dafe2b8d74ba.ico)"></div>
+                            <a href="http://pc-technic.narod.ru" class="link-content" target="_blank" itemprop="url">pc-technic.narod.ru</a>
+                        </li>
+                        <li class="site-link">
+                            <div class="link-favicon" style="background-image: none"></div>
+                            <a href="http://www.freelancerim.co.il/Freelancers/PublicProfile/slava.sanin" class="link-content" target="_blank" itemprop="url">www.freelancerim.co.il/Freelancers/PublicProfile/slava.sanin</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-
-        <div style="display: none; z-index: 1000; outline: 0px; " class="ui-dialog ui-widget ui-widget-content ui-corner-all qrcode" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-large_qrcode_container">
-            <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
-                <span class="ui-dialog-title" id="ui-dialog-title-large_qrcode_container">&nbsp;</span>
-                <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button">
-                    <span class="ui-icon ui-icon-closethick">Close</span>
-                </a>
-            </div>
-            <div id="large_qrcode_container" class="container qrcode-large invisible ui-dialog-content ui-widget-content" style="display: block; ">
-                <img src="/qrcode/slava1974" id="qrcode_picture" alt="Slava Sanin (slava1974)">
-                <div id="large_qrcode-overlay">
-                    <p></p>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div id="reg_form2" class="span6 center" style="display: none;" title="Please log in or sign up">
-            <div class="hoverpage">
-                <div class="header-guest">This option is available only after logging in
-                    <a href="/?redirect=%2Fslava1974%23like#sign_up"><br>Sign up</a> or <a href="/?redirect=%2Fslava1974%23like#sign_in">Log in</a></div>
-                <hr class="rule">
-            </div>
             <div class="clear"></div>
-            <div style="padding: 0px 30px 0px 30px;">
-                <ul id="social-auth">
-                    <li>
-                        <a id="instagram_login" class="ubtn ubtn-grey button-big" href="/app/instagram/login/?redirect=%2Fslava1974%23like" title="Log in with Instagram"><img src="/img/app/default/instagram.png" class="auth_icon">Instagram</a>
-                    </li>
-                    <li>
-                        <a id="google_login" class="ubtn ubtn-grey button-big" href="/app/google/login/?redirect=%2Fslava1974%23like" title="Log in with Google+"><img src="/img/app/default/google.png" class="auth_icon">Google+</a>
-                    </li>
-                    <li>
-                        <a id="linkedin_login" class="ubtn ubtn-grey button-big" href="/app/linkedin/login/?redirect=%2Fslava1974%23like" title="Log in with LinkedIn"><img src="/img/app/default/linkedin.png" class="auth_icon">LinkedIn</a>
-                    </li>
-                    <li>
-                        <a id="twitter_login" class="ubtn ubtn-grey button-big" href="/app/twitter/login/?redirect=%2Fslava1974%23like" title="Log in with Twitter"><img src="/img/app/default/twitter.png" class="auth_icon">Twitter</a>
-                    </li>
-                    <li>
-                        <a id="youtube_login" class="ubtn ubtn-grey button-big" href="/app/youtube/login/?redirect=%2Fslava1974%23like" title="Log in with YouTube"><img src="/img/app/default/youtube.png" class="auth_icon">YouTube</a>
-                    </li>
-                    <li>
-                        <a id="vkontakte_login" class="ubtn ubtn-grey button-big" href="/app/vkontakte/login/?redirect=%2Fslava1974%23like" title="Log in with VK"><img src="/img/app/default/vkontakte.png" class="auth_icon">VK</a>
-                    </li>
-                    <li>
-                        <a id="mailru_login" class="ubtn ubtn-grey button-big" href="/app/mailru/login/?redirect=%2Fslava1974%23like" title="Log in with Mail.ru"><img src="/img/app/default/mailru.png" class="auth_icon">Mail.ru</a>
-                    </li>
-                    <li>
-                        <a id="facebook_login" class="ubtn ubtn-grey button-big" href="/app/facebook/login/?redirect=%2Fslava1974%23like" title="Log in with Facebook"><img src="/img/app/default/facebook.png" class="auth_icon">Facebook</a>
-                    </li>
-                    <li>
-                        <a id="yandex_login" class="ubtn ubtn-grey button-big" href="/app/yandex/login/?redirect=%2Fslava1974%23like" title="Log in with Yandex"><img src="/img/app/default/yandex.png" class="auth_icon">Yandex</a>
-                    </li>
-                    <li>
-                        <a id="odnoklassniki_login" class="ubtn ubtn-grey button-big" href="/app/odnoklassniki/login/?redirect=%2Fslava1974%23like" title="Log in with Odnoklassniki"><img src="/img/app/default/odnoklassniki.png" class="auth_icon">Odnoklassniki</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="clear"></div>
-        </div>
 
-        <div id="minicolorsDialog" title="Choose color" style="display:none">
-            <div class="dialog-content-padding">
-                <input type="hidden" id="minicolorsHolder" value="#FFCC00" data-opacity=".5">
-                <span class="help-text">Choose color</span>
+            <div id="bottom-indent"></div>
+        </div>
+    </div>
+    <div id="reopen_logs" class="reopen_logs reopen-anim"></div>
+
+    <script type="text/javascript">
+        window.def_location_id = "";
+        window.def_location_name = "";
+
+    </script>
+
+
+    <div style="display: none; z-index: 1000; outline: 0px; " class="ui-dialog ui-widget ui-widget-content ui-corner-all avatar" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-large_avatar_container">
+        <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+            <span class="ui-dialog-title" id="ui-dialog-title-large_avatar_container">&nbsp;</span>
+            <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button">
+                <span class="ui-icon ui-icon-closethick">Close</span>
+            </a>
+        </div>
+        <div id="large_avatar_container" class="container avatar-large invisible ui-dialog-content ui-widget-content" style="display: block; ">
+            <img src="/img/avatar/r/c/k/full_snqqjbn9.jpg" id="avatar_picture" alt="Slava  Sanin (slava1974)">
+            <div id="large_avatar-overlay">
+                <p></p>
             </div>
         </div>
+    </div>
 
-        <div id="upload-progressbar">
-            <div class="progress"></div>
+    <div style="display: none; z-index: 1000; outline: 0px; " class="ui-dialog ui-widget ui-widget-content ui-corner-all qrcode" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-large_qrcode_container">
+        <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+            <span class="ui-dialog-title" id="ui-dialog-title-large_qrcode_container">&nbsp;</span>
+            <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button">
+                <span class="ui-icon ui-icon-closethick">Close</span>
+            </a>
         </div>
+        <div id="large_qrcode_container" class="container qrcode-large invisible ui-dialog-content ui-widget-content" style="display: block; ">
+            <img src="/qrcode/slava1974" id="qrcode_picture" alt="Slava Sanin (slava1974)">
+            <div id="large_qrcode-overlay">
+                <p></p>
+            </div>
+        </div>
+    </div>
 
-        <div id="dev-null" style="display: none"></div>
+
+
+    <div id="reg_form2" class="span6 center" style="display: none;" title="Please log in or sign up">
+        <div class="hoverpage">
+            <div class="header-guest">This option is available only after logging in
+                <a href="/?redirect=%2Fslava1974%23like#sign_up"><br>Sign up</a> or <a href="/?redirect=%2Fslava1974%23like#sign_in">Log in</a></div>
+            <hr class="rule">
+        </div>
+        <div class="clear"></div>
+        <div style="padding: 0px 30px 0px 30px;">
+            <ul id="social-auth">
+                <li>
+                    <a id="instagram_login" class="ubtn ubtn-grey button-big" href="/app/instagram/login/?redirect=%2Fslava1974%23like" title="Log in with Instagram"><img src="/img/app/default/instagram.png" class="auth_icon">Instagram</a>
+                </li>
+                <li>
+                    <a id="google_login" class="ubtn ubtn-grey button-big" href="/app/google/login/?redirect=%2Fslava1974%23like" title="Log in with Google+"><img src="/img/app/default/google.png" class="auth_icon">Google+</a>
+                </li>
+                <li>
+                    <a id="linkedin_login" class="ubtn ubtn-grey button-big" href="/app/linkedin/login/?redirect=%2Fslava1974%23like" title="Log in with LinkedIn"><img src="/img/app/default/linkedin.png" class="auth_icon">LinkedIn</a>
+                </li>
+                <li>
+                    <a id="twitter_login" class="ubtn ubtn-grey button-big" href="/app/twitter/login/?redirect=%2Fslava1974%23like" title="Log in with Twitter"><img src="/img/app/default/twitter.png" class="auth_icon">Twitter</a>
+                </li>
+                <li>
+                    <a id="youtube_login" class="ubtn ubtn-grey button-big" href="/app/youtube/login/?redirect=%2Fslava1974%23like" title="Log in with YouTube"><img src="/img/app/default/youtube.png" class="auth_icon">YouTube</a>
+                </li>
+                <li>
+                    <a id="vkontakte_login" class="ubtn ubtn-grey button-big" href="/app/vkontakte/login/?redirect=%2Fslava1974%23like" title="Log in with VK"><img src="/img/app/default/vkontakte.png" class="auth_icon">VK</a>
+                </li>
+                <li>
+                    <a id="mailru_login" class="ubtn ubtn-grey button-big" href="/app/mailru/login/?redirect=%2Fslava1974%23like" title="Log in with Mail.ru"><img src="/img/app/default/mailru.png" class="auth_icon">Mail.ru</a>
+                </li>
+                <li>
+                    <a id="facebook_login" class="ubtn ubtn-grey button-big" href="/app/facebook/login/?redirect=%2Fslava1974%23like" title="Log in with Facebook"><img src="/img/app/default/facebook.png" class="auth_icon">Facebook</a>
+                </li>
+                <li>
+                    <a id="yandex_login" class="ubtn ubtn-grey button-big" href="/app/yandex/login/?redirect=%2Fslava1974%23like" title="Log in with Yandex"><img src="/img/app/default/yandex.png" class="auth_icon">Yandex</a>
+                </li>
+                <li>
+                    <a id="odnoklassniki_login" class="ubtn ubtn-grey button-big" href="/app/odnoklassniki/login/?redirect=%2Fslava1974%23like" title="Log in with Odnoklassniki"><img src="/img/app/default/odnoklassniki.png" class="auth_icon">Odnoklassniki</a>
+                </li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div id="minicolorsDialog" title="Choose color" style="display:none">
+        <div class="dialog-content-padding">
+            <input type="hidden" id="minicolorsHolder" value="#FFCC00" data-opacity=".5">
+            <span class="help-text">Choose color</span>
+        </div>
+    </div>
+
+    <div id="upload-progressbar">
+        <div class="progress"></div>
+    </div>
+
+    <div id="dev-null" style="display: none"></div>
     </div>
     <!-- ******************************************* ФИДБЭК ********************************** -->
     <div id="fwOverlay" class="hidden">
@@ -601,8 +654,9 @@
                                 <div class="uscl-item uscl-slide"><span class="uscl-slide-close ico_uscl-arrow ico_uscl"></span></div>
                                 <div class="uscl-item uscl-slide"><span class="uscl-slide-close ico_uscl-arrow ico_uscl"></span></div>
                                 <div class="uscl-item uscl-slide"><span class="uscl-slide-close ico_uscl-arrow ico_uscl"></span></div>
-                            <div class="uscl-item uscl-slide"><span class="uscl-slide-close ico_uscl-arrow ico_uscl"></span></div></div><span class="uscl-slide-open ico_uscl-like"></span><span class="uscl-slide-open ico_uscl-like"></span><span class="uscl-slide-open ico_uscl-like"></span><span class="uscl-slide-open ico_uscl-like"></span><span class="uscl-slide-open ico_uscl-like"></span><span class="uscl-slide-open ico_uscl-like"></span></div>
-                        
+                                <div class="uscl-item uscl-slide"><span class="uscl-slide-close ico_uscl-arrow ico_uscl"></span></div>
+                            </div><span class="uscl-slide-open ico_uscl-like"></span><span class="uscl-slide-open ico_uscl-like"></span><span class="uscl-slide-open ico_uscl-like"></span><span class="uscl-slide-open ico_uscl-like"></span><span class="uscl-slide-open ico_uscl-like"></span><span class="uscl-slide-open ico_uscl-like"></span></div>
+
                     </div>
                 </div>
             </div>
@@ -622,4 +676,7 @@
     <script async="" type="text/javascript" charset="UTF-8" src="https://usocial.pro/usocial/fingerprint2.min.js"></script><img id="usocial-pixel" src="https://usocial.pro/logs/store-view?&amp;c=2953110&amp;pid=59db3b595d9c6084c185cd73e3febaf3&amp;usocialUser=d9b8a7819a9bf02f6dcc222767400145&amp;pType=share&amp;url=file:///C:/Users/Slava/Documents/GitHub/Slava-Sanin.github.io/index.html&amp;barDisplayStatus=open" style="height: 0px; width: 0px; display: none;">
 
 
-<script async="" type="text/javascript" charset="UTF-8" src="https://usocial.pro/usocial/usocial.share.js?js=6.1.4"></script><script async="" type="text/javascript" charset="UTF-8" src="https://usocial.pro/usocial/fingerprint2.min.js"></script><img id="usocial-pixel" src="https://usocial.pro/logs/store-view?&amp;c=6324854&amp;pid=59db3b595d9c6084c185cd73e3febaf3&amp;usocialUser=d9b8a7819a9bf02f6dcc222767400145&amp;pType=share&amp;url=file:///C:/Users/Slava/Documents/GitHub/Slava-Sanin.github.io/index.html&amp;barDisplayStatus=open" style="height: 0px; width: 0px; display: none;"></body></html>
+    <script async="" type="text/javascript" charset="UTF-8" src="https://usocial.pro/usocial/usocial.share.js?js=6.1.4"></script>
+    <script async="" type="text/javascript" charset="UTF-8" src="https://usocial.pro/usocial/fingerprint2.min.js"></script><img id="usocial-pixel" src="https://usocial.pro/logs/store-view?&amp;c=6324854&amp;pid=59db3b595d9c6084c185cd73e3febaf3&amp;usocialUser=d9b8a7819a9bf02f6dcc222767400145&amp;pType=share&amp;url=file:///C:/Users/Slava/Documents/GitHub/Slava-Sanin.github.io/index.html&amp;barDisplayStatus=open" style="height: 0px; width: 0px; display: none;"></body>
+
+</html>
