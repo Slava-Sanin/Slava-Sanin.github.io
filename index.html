@@ -52,12 +52,12 @@
     <link href="/css/ui-lightness/jquery-ui-1.9.2.custom.min.css" rel="stylesheet">
     <link href="/css/tipTip.css" rel="stylesheet">
     <link href="/css/ui-redefine.css" rel="stylesheet">
-    <link href="/css/global.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
     <link href="/css/header.css" rel="stylesheet">
-    <link href="/css/profile.css" rel="stylesheet">
+    <link href="css/profile.css" rel="stylesheet">
     <link href="/css/uidme.css" rel="stylesheet">
     <link href="/css/feedback.min.css" rel="stylesheet">
-    <link href="/css/positions.css" rel="stylesheet">
+    <link href="css/positions.css" rel="stylesheet">
     <link href="/css/apps.css" rel="stylesheet">
     <link href="/css/messenger.css" rel="stylesheet">
     <link href="/css/emoji.css" rel="stylesheet">
@@ -194,7 +194,7 @@
 
     <meta property="og:image" content="http://uid.me/img/background/v/r/o/medium_zglgmt8x.jpg">
     <link href="/css2/positions.css?2" rel="stylesheet">
-    <link href="/css2/mobile1.css?2" rel="stylesheet">
+    <link href="css2/mobile1.css?2" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="https://usocial.pro/usocial/css/uscl.css?v=6.1.4">
     <link type="text/css" rel="stylesheet" href="https://usocial.pro/usocial/css/uscl.css?v=6.1.4">
     <link type="text/css" rel="stylesheet" href="https://usocial.pro/usocial/css/uscl.css?v=6.1.4">
@@ -328,8 +328,31 @@
                 #profile-gtalk:before {
                     background-position: -463px -15px;
                 }
+                /*
+                a {
+                    color: rgba(240, 223, 153, 1);
+                }
+                ol,
+                ul {
+                    list-style: none;
+                    padding: 0;
+                }
+*/
+                #profile-container {
+                    visibility: visible;
+                    width: fit-content;
+                    margin: 0 auto;
+                }
+                #mobile-bg {
+                    display: block;
+                }
+                /*
+                body {
+                    
+                }
+*/
             }
-            
+            /*
             @media screen and (min-width: 640px) *,
              ::before,
              ::after {
@@ -338,6 +361,7 @@
                 transition-duration: .2s;
                 transition-timing-function: linear;
             }
+*/
 
         </style>
 
@@ -423,15 +447,12 @@
                         <span id="profile-gtalk" class="profile-tags" itemprop="">slava.sanin@gmail.com</span>
                     </div>
 
-
-
-
                 </div>
 
                 <div class="social_services_container" style="">
                     <hr>
                     <div id="social_services" class="profile-bevel" style="min-height: 40px;">
-                        <a class="profile-apps uapp-icon google" app="google" title="Google+" style=""></a>
+                        <a href="https://www.linkedin.com/in/slava1974/" target="_blank" class="profile-apps uapp-icon linkedin" app="linkedin" title="LinkedIn" style="">Linkedin</a>
                     </div>
                 </div>
                 <hr>
