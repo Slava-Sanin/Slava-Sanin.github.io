@@ -1,0 +1,241 @@
+@media screen and (min-width: 641px){
+	.mobile_marks { display: none}
+}
+html {
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+}
+@media screen and (max-width: 640px){	
+body{background: black !important}
+	#profile-photo{position:absolute; top:20px; right:20px; max-width:30%; margin:0; border-radius: 0; max-width: 27% !important; }
+	#profile-photo img{ border: 1px solid white;  width:98% !important; }
+	#profile.shadow { box-shadow: none !important;}
+	#profile {
+		position: static !important;
+		margin: 0 !important;
+
+	}
+	#mobile-bg .image_shadow {
+		background: rgba(0,0,0,0.4);
+		z-index:1;
+		width: 100%;
+		height: 100%;
+		position:absolute;
+	}
+	#soc-actions { display: none; }
+	#profile_name { font-size:29px !important;}
+	.mobile_marks{display:block; height: 30px; margin-top:-70px; z-index:150; position:absolute; width:80%;}	
+
+	.mobile_marks .write a{width:148px; float:left; text-align:center; line-height:31px; color:white; font-size:8pt; text-transform:uppercase ; text-decoration:none; display:block;  height:29px; margin-right:10px; border: 1px solid #e5e5e5; border-radius:2px; font-weight:300 }
+	.mobile_marks .favorite a{color:white;float:left; margin-top:9px; font-size:8pt; margin-right:10px; line-height:13px;  border-bottom: 1px dotted white; text-decoration:none; display:block; width: auto; white-space: nowrap; }	
+	.mobile_marks .mrk a{color:white; float:left;  margin-top:9px;font-size:8pt; line-height:13px;  border-bottom: 1px dotted white; text-decoration:none; display:block; width: auto}
+	
+	.mobile_marks .mrk a:before {
+		content: attr(data-title);
+
+	}
+	.mobile_marks .mrk a.active:before {
+		content: attr(data-title-active);
+	}
+	
+	.mobile_marks .favorite a:before {
+		content: attr(data-title);
+
+	}
+	.mobile_marks .favorite a.active:before {
+		content: attr(data-title-active);
+	}
+	
+	.mobile_marks .mrk:before {
+		float:left;
+		content: '';
+		background: url(/img/icons/heart_16.png) center center no-repeat;
+		height: 16px;
+		width: 16px;
+		margin-top:8px;
+		margin-right:4px;
+		display:inline-block;
+	}
+
+	.mobile_marks .mrk.active:before {
+		background: url(/img/icons/heart_full_16.png) center center no-repeat;
+	}
+
+	.mobile_marks .favorite:before {
+		float:left;
+		content: '';
+		background: url(/img/icons/star_16.png) center center no-repeat;
+		height: 16px;
+		width: 16px;
+		margin-top:7px;
+		margin-right:4px;
+		display:inline-block;
+	}
+
+	.mobile_marks .favorite.active:before {
+		background: url(/img/icons/star_full_16.png) center center no-repeat;
+	}
+}
+
+@media screen and (max-width: 640px){
+		#header-profile-link { display: none; }
+		#header-users-expander { display: none; }
+		#header-posts-expander { display: none!important; }
+		#reopen_logs { display: none !important;}
+		#profile #profile_name{
+			display:block;
+			font-family: 'Open Sans';			
+			position: absolute; 
+			width: auto;
+			top:20px; left: 20px;
+			text-transform:uppercase;  
+			width:63%;
+			color: white !important;
+			z-index:50;
+		}
+		#profile-container.no-image #profile_name { position: static; margin:0;}
+		#profile-container.no-image #profile-photo { position: static; float:right;}
+		#profile-container.no-image #profile-photo-overlay, #profile-container.no-image #avatar-prompt { display: none !important;}
+
+		#profile #profile_headline{
+			display: block;
+			font-family: 'Open Sans';
+			font-size: 12px !important;
+			position: absolute; 
+			width: auto;
+			top: 90px; left: 20px;
+			width:60%;
+			font-size:17px;
+			color: white !important;
+			z-index:50;
+		}	
+		#profile-container.no-image .mobile_marks { position: static; height: 35px; padding: 6px 0 16px; float:none; clear:both; }
+		#profile-container.no-image .mobile_marks > * { position: static; float: left;  }
+		#profile-container.no-image .mobile_marks .favorite { margin: 9px 0 0 10px; }
+		#profile-container.no-image .mobile_marks .mrk { margin: 10px 0 0 10px; }
+		#profile-container.no-image #profile_headline { position: static; margin:0; padding:10px 0; width: auto; }
+				
+	}
+	
+	@media screen and (max-width: 400px){
+
+	#profile #profile_name {	font-size: 22px !important; width: 60%;	}
+	.mobile_marks .write a{width:86px; height: 26px; line-height: 26px;} 	
+	.mobile_marks .write a span{display:none}
+	.mobile_marks  .favorite a { margin-top:7px; }
+	.mobile_marks  .mrk a { margin-top:7px; }
+	.mobile_marks .favorite:before, .mobile_marks .mrk:before { display: none }
+		#profile #profile_headline{
+			
+			top:75px; left: 20px;			 
+			
+		}	
+				
+	}
+
+@media screen and (max-width: 640px){
+	/* #bg-pattern { background-image:none !important;} */
+	#btn_like{
+			display:none
+		}
+	.mytooltip, .mytips {
+		display: none;
+	}
+	#qrcode_picture { width: 100%;}
+	#profile_bio{font-size:13px !important; margin-right:0; line-height:18px;}
+
+	#social_services .add_aplication{display:block; float: right; background:#1f69ac url('../img/add.png') top left repeat-x; width:110px; padding:5px 0 5px 0; border-radius: 5px; color: white; font-size:12px; line-height:13px; text-align:center; cursor: pointer }
+	#profile #list_my-sites .link-content{font-weight:normal}	
+	#profile #user-email{font-size: 13px !important; font-family: 'Open Sans'; color: white !important	}	
+}
+
+@media screen and (max-width: 640px){
+	#profile { overflow:hidden; }
+	#addapp-but {
+		display:none;
+	}
+body{
+	font-family: 'Open Sans';
+		/* background: url(/img/escheresque_ste.png); */
+
+}
+	.ui-resiz`able-handle { display: none !important;}
+	#profile > .white_shadow {
+		text-shadow: none !important;
+	}
+	#profile-container{
+		width:100%;
+		position:relative;		
+		
+	}
+	#profile {
+		position: static !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		max-width: 640px !important;
+	}
+	
+	#profile.shadow{
+		box-shadow: none !important;
+	}
+	
+	
+	#profile_name {
+
+		
+		text-shadow: 0 1px rgba(0, 0, 0, 0.5);		
+	}
+	
+
+	#profile_birthday { display: block !important; width: auto !important; }
+	#profile #user_tags li,
+	#profile #list_my-sites .link-content,
+	#profile #user_tags a,
+	#profile_birthday,
+	#profile_bio,
+	#profile #profile_contacts {
+		font: normal 12px 'Open Sans' !important;
+		text-shadow: 0 1px rgba(0, 0, 0, 0.5);
+	}
+	.site-link a,
+	#profile_birthday,
+	#profile_contacts .row,
+	#user_tags li,
+	#profile_name,
+	#profile_headline,
+	#profile_bio {
+		color: rgba(255, 255, 255, 0.8) !important;
+		
+	}
+	
+	#profile #user_tags li,
+	#profile #list_my-sites .link-content,
+	#profile #user_tags a,
+	#profile #profile_contacts {
+		
+	}
+	
+	#profile #bottom-indent {
+		display: none;
+	}
+	
+	#social_services {
+		padding-right: 0 !important;
+	}
+}
+
+
+@media screen and (max-width: 350px){
+	#profile_name {	font-size: 20px !important;	}
+
+
+}
+
+/* Ð»ÐµÐ½Ñ‚Ð° Ð½Ð¾Ð²Ð¾ÑÑ‚ÐµÐ¹ Ð² ÑÐ¾Ñ†.ÑÐµÑ‚ÑÑ… */
+@media screen and (max-width: 600px){
+	.ui-widget-overlay, #feedback-window-mobile { display: none }
+	.ui-dialog { max-width: 100% !important; position: fixed; top:0;left:0;}
+	/*#social-tab-stream iframe { height: 100% !important;}*/
+	.ui-dialog .ui-dialog-titlebar { position: static !important;}
+	/*#social iframe { }*/
+
+}
