@@ -1,6 +1,16 @@
 body {
 	margin-top: 0;
 	padding-top: 0;
+	//background-image: url("../img/Backgrounds/Eschebl.jpg");
+	//background-image: url("../img/Backgrounds/Fichtebl.jpg");
+	//background-image: url("../img/Backgrounds/TexKonv007.jpg");
+	//background-image: url("../img/Backgrounds/TexKonv009.jpg");
+	//background-image: url("../img/Backgrounds/TexKonv022.jpg");
+	//background-image: url("../img/Backgrounds/TexKonv040.jpg");
+	//background-image: url("../img/Backgrounds/TexKonv048.jpg");
+	//background-image: url("../img/Backgrounds/TexKonv053.jpg");
+	//background-image: url("../img/Backgrounds/TexKonv055.jpg");
+	background-image: url("../img/Backgrounds/tittel.jpg");
 }
 
 .logo {
@@ -105,9 +115,12 @@ h1 {
 footer {
 	clear: both;	
 	border-top: 1px solid #e2e2e6;
-    width: auto;
+    width: 100%;
     height: 45px;
     background-color: #f1f1f1;
     text-align: center;
     line-height: 45px;
+	position: absolute;
+    bottom: 0;
+    left: 0;
 }
