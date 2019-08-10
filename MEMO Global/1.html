@@ -1,0 +1,85 @@
+<html>
+<head>
+	<title>My DIVs</title>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="css/1.css">
+
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</head>
+<body>
+	
+	<div id="wrapper">
+		<p>
+			<button type="button">show</button>
+		</p>
+
+			<div class="box" id="div1">1</div>
+			<div class="box" id="div2">2</div>
+			<div class="box" id="div3">3</div>
+			<div class="box" id="div4">4</div>
+			<div class="box" id="div5">5</div>
+			<div class="box" id="div6">6</div>
+			<div class="line"></div>
+			<br>
+			<br>
+			
+			<form action="form1.php" method="post">
+				Name: <input type="text" id="name" name="name" required><br><br>
+				Email: <input type="text" id="email" name="email" required><br><br>
+				<input type="submit" value="Submit">
+			</form>
+			<br>
+			
+	</div>
+
+</body>
+
+<script>
+	var temp_color;
+	$(document).ready(function(){
+//----------------------------------------------	
+			$("div.box").hover(function(){
+			
+				temp_color = $(this).css("background-color");
+				
+				$(this).css("background-color", "white");
+				}, function(){
+								$(this).css("background-color", temp_color);
+							 }
+							 
+			);
+			//----------------------------------
+			$("div.box").click(function(){
+				temp_color = $(this).html();
+				if ((temp_color%2) == 0 ) { $(".box").css("visibility","hidden"); }
+			});
+			//----------------------------------
+			$("button").click(function(){
+				$(".box").css("visibility","visible");
+			});
+			//----------------------------------
+			<!-- Real-time Validation -->
+				<!--Name can't be blank-->
+				$('#name').on('input', function() {
+					var input=$(this);
+					var re = /^[a-zA-Z +$/;
+					var is_name=re.test(input.val());
+					//var is_name=input.val();
+					if(is_name){input.removeClass("invalid").addClass("valid");}
+					else{input.removeClass("valid").addClass("invalid");}
+				});
+				
+				<!--Email must be an email -->
+				$('#email').on('input', function() {
+					var input=$(this);
+					var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+					var is_email=re.test(input.val());
+					if(is_email){input.removeClass("invalid").addClass("valid");}
+					else{input.removeClass("valid").addClass("invalid");}
+				});
+//----------------------------------------------			
+	});
+</script>
+</html>
