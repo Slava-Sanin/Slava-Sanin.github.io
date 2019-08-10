@@ -1,0 +1,78 @@
+
+/*#contact label{*/
+    /*display: inline-block;*/
+    /*width: 100px;*/
+    /*text-align: right;*/
+/*}*/
+/*#contact_submit{*/
+    /*padding-left: 100px;*/
+/*}*/
+/*#contact div{*/
+    /*margin-top: 1em;*/
+/*}*/
+/*textarea{*/
+    /*vertical-align: top;*/
+    /*height: 5em;*/
+/*}*/
+#contact .error{
+    display: none;
+    /*direction: ltr;*/
+    /*text-align: left;*/
+    /*margin-left: 10px;*/
+}
+#contact .error_show{
+    color: red;
+    /*direction: ltr;*/
+    /*text-align: center;*/
+    display: inline-block;
+    /*margin-left: 10px;*/
+    float: left;
+}
+input.invalid, textarea.invalid{
+    border: 2px solid red;
+}
+input.valid, textarea.valid{
+    border: 2px solid green;
+}
+input {
+    background-color: #ffffff !important;
+    border: 1px solid gainsboro;
+}
+div.input-box {
+    padding-top: 5px;
+    padding-bottom: 11px;
+}
+
+/*----------Responsive-----------*/
+header, footer, .lblock, .rblock, #wrapper, #pic2 {
+    /*min-width: 320px;*/
+    width: auto;
+}
+header, #pic2 {
+    background-repeat: no-repeat;
+    background-size: contain;
+    resize: both;
+    /*good for mobile*/
+    /*height: auto;*/
+}
+#wrapper {
+    max-width: 950px;
+    min-width: 320px;
+    height: auto;
+}
+/*.lblock {*/
+    /*min-width: 320px;*/
+/*}*/
+.rblock {
+    max-width: 475px;
+}
+#pic2 {
+    min-height: 220px;
+}
+header {
+    min-height: 255px;
+}
+.comments-box {
+    padding: 6px 10px;
+    height: 79px;
+}

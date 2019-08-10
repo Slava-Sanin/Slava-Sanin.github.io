@@ -1,0 +1,180 @@
+#wrapper {
+    width: 950px;
+    height: 1449px;
+    /*border: 1px solid;*/
+    margin: 0 auto;
+}
+header {
+    background-image: url("../Images/pic1.jpg") ;
+    /*border: 1px solid red;*/
+    /*display: block;*/
+    height: 615px;
+}
+#pic2 {
+    background-image: url("../Images/pic2.jpg") ;
+    height: 529px;
+    clear: both;
+}
+footer {
+    background-color: #ffffff;
+    /*width: 950px;*/
+    /*height: 100px;*/
+    /*border: 1px solid;*/
+    padding: 15px 35px;
+    position: relative;
+    top: -33px;
+    /*direction: rtl;*/
+}
+#footer_text {
+    /*border: 1px solid;*/
+    /*width: 661px;*/
+    width: 79%;
+    float: right;
+}
+.line {
+    border: 1px dotted;
+}
+#footer_text p {
+    font-size: 14px;
+    text-align: right;
+    font-family: "Myriad Pro";
+    line-height: 19px;
+    margin: 8px 0px;
+    color: #636466;
+}
+#footer_text p.p1 span {
+    font-weight: bold;
+}
+#footer_text p.p1 {
+    direction: rtl;
+}
+#footer_text p.p2 span {
+    direction: rtl;
+}
+#footer_text p.p2 {
+    /*font-size: 12px;*/
+    /*font-family: "Myriad Pro";*/
+}
+.rblock {
+    float: right;
+    width: 50%;
+    /*border: 1px solid;*/
+    text-align: center;
+    font-family: "Myriad Pro";
+    direction: rtl;
+}
+.lblock {
+    float: left;
+    width: 48%;
+    height: 261px;
+    /*border: 1px solid;*/
+    text-align: right;
+    direction: rtl;
+}
+.color1 {
+    color: #858689;
+}
+.color2 {
+    color: #6da1a7
+}
+.rblock h2 {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: "Myriad Pro";
+    margin: 0;
+}
+.rblock h1 {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "Myriad Pro";
+    margin: 5px;
+}
+.rblock p {
+    margin: 5px;
+    font-size: 19px;
+}
+.rblock h3.color2 {
+    /*padding: 20px 80px;*/
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Myriad Pro";
+    /*border: 1px solid;*/
+    margin: 5px;
+}
+.rblock h3.color1 {
+    padding: 20px 80px;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: "Myriad Pro";
+    /*border: 1px solid;*/
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.rblock h1 span.color1 {
+    top: -3px;
+    position: relative;
+}
+.input-box {
+    border: 1px solid gainsboro;
+    padding: 10px 10px;
+    width: 392px;
+    /*height: 30px;*/
+    margin-bottom: 10px;
+}
+.input-box input {
+    width: 320px;
+
+    float: left;
+}
+.comments-box {
+    padding: 5px 10px;
+    border: 1px solid gainsboro;
+    width: 392px;
+    height: 73px;
+    margin-bottom: 10px;
+}
+textarea {
+    float: left;
+    resize: none;
+    height: 65px;
+}
+/*img[alt=profile] {*/
+    /*position: relative;*/
+    /*top: 3px;*/
+/*}*/
+/*img[alt=email] {*/
+    /*position: relative;*/
+    /*top: 1px;*/
+/*}*/
+/*img[alt=telephone] {*/
+    /*position: relative;*/
+    /*top: 3px;*/
+/*}*/
+.input-box span, .comments-box span {
+    font-size: smaller;
+}
+input[type=submit] {
+    float: left;
+    margin-left: 41px;
+    border-radius: 7px;
+    width: 66px;
+    box-shadow: 2px 2px 4px #CCCCCC;
+    background-color: #ffffff;
+    height: 25px;
+}
+form > span {
+    font-size: smaller;
+}
+input[name=email], input[name=tel] {
+    text-align: left;
+    direction: ltr;
+}
+header p {
+    color: #ffffff;
+    direction: rtl;
+    margin: 0;
+    padding-top: 31%;
+    margin-right: 6%;
+    font-size: 17px;
+}

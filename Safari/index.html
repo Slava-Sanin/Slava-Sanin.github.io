@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="he">
+    <meta charset="UTF-8">
+    <title>Safari</title>
+
+    <script type='text/javascript' src='js/jquery.min.js'></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <!--bootstrap-3.3.5-dist-->
+
+    <script type='text/javascript' src='js/validation.js'></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/validation.css">
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <p>
+                אפריקה. נקודת מבט חדשה.
+            </p>
+        </header>
+        <div id="content">
+            <div class="rblock">
+                <h2 class="color1">הדרך לאפריקה מתחילה בטיסה ישירה לטנזניה</h2>
+                <h1 class="color2">פסח 2015 <span class="color1">|</span> 9 ימים מלאים</h1>
+                <div class="line"></div>
+                <p class="color1">
+                    ספארי קומפני בטיסת (סאנדור) אל-על ישירה לטנזניה וחזרה ישירות מזנזיבר. מבחר תכניות ספארי המותאמות באופן אישי.
+                </p>
+                <h3 class="color2">תמיד אמרתם שפעם תעשו את זה. עכשיו זה הזמן.</h3>
+                <h3 class="color1">למידע נוסף, התאמת ספארי אישי והזמנות 03-5617021</h3>
+            </div>
+            <div class="lblock">
+                <form id="contact" action="contact-us-send.php" method="post">
+
+                    <div class="color1 input-box">
+                        <img src="Images/profile.png" alt="profile" >
+                        <span> שם </span>
+                        <input type="text" id="contact_name" name="name" required><br>
+                        <span class="error_span error">This field is required</span>
+                    </div>
+
+                    <div class="color1 input-box">
+                        <img src="Images/email.png" alt="email" >
+                        <span> דוא''ל </span>
+                        <input type="text" id="contact_email" name="email" required><br>
+                        <span class="error_span error">A valid email address is required</span>
+                    </div>
+
+                    <div class="color1 input-box">
+                        <img src="Images/tel.png" alt="telephone" >
+                        <span> טלפון </span>
+                        <input type="text" id="contact_tel" name="tel" required><br>
+                        <span class="error_span error">A valid phone number is required</span>
+                    </div>
+
+                    <div class="comments-box">
+                        <span class="color1"> הערות </span>
+                        <textarea type="text" id="contact_comments" name="comments" row=5 cols=39></textarea>
+                    </div>
+
+                    <input type="checkbox" name="news-updating" >
+                    <span class="color1"> ארצה לקבל עידכונים וחדשות </span>
+
+                    <input type="submit" id="contact_submit" value="שלח" >
+
+                </form>
+            </div>
+        </div>
+        <div id="pic2"></div>
+        <footer>
+            <img src="Images/pic3.png">
+            <div id="footer_text" class="color1">
+                <p class="p1">
+                    <span>ספארי, בשפה הסווהילית, פירושו מסע.</span>
+                    בשפה שלנו, מסע פירושו יציאה לדרך של גילויים חדשים, מראות, ריחות, טעמים. תחושה שאין דומה לה. לגלות את אפריקה, בכל פעם מחדש, כבר 20 שנה. נשמח להיות הדרך שלכם, לאפריקה.
+                </p>
+                <div class="line"></div>
+                <p class="p2">
+                    info@safaricompany.co.il | www.safaricompany.co.il | <span> סעדיה גאון 24, תל אביב טל. 03-5617021 פקס. 15335468614 </span>
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
