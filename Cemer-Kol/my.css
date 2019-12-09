@@ -3,8 +3,14 @@
 
 p{ alignment-adjust:central; font-family:verdana; color:blue; font-size:20pt; }
 /*h1{color:green; font-size:250px; font-family:arial;}*/
-.my_menu{ align-content:center; color:black; font-size:20pt; }
+.my_menu{ align-content:center; color:black; font-size:22pt; }
+.my_menu a { 
+    text-decoration: none; 
+    color: white; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 h2{ text-align:center; font-family: arial; color: #000000; font-size: 20pt; }
+
 
 body {
     width: 900px;
@@ -13,7 +19,12 @@ body {
 }
 
 .my_menu a:hover {
-    color: yellow;
+    color: blue;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* This button was generated using CSSButtonGenerator.com */
