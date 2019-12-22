@@ -15,7 +15,7 @@ h2{ text-align:center; font-family: arial; color: #000000; font-size: 20pt; }
 body {
     width: 900px;
     margin: 0 auto;
-    background: url("Images/grey005.gif");
+    background: url("images/grey005.gif");
 }
 
 .my_menu a:hover {
