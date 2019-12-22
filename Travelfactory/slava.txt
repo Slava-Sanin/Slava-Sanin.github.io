@@ -1,0 +1,14 @@
+
+https://console.cloud.google.com/project/_/billing/enable
+
+Get Started with Google Maps Platform
+https://developers.google.com/maps/gmp-get-started
+
+Название проекта
+Travelfactory
+
+Идентификатор проекта
+travelfactory
+
+Номер проекта
+85644575279

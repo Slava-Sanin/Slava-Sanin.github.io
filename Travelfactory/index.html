@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" >
+    <title>Viacheslav Sanin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <link rel="stylesheet" type="text/css" href="media.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id='container'>
+
+    </div>
+</body>
+
+<script>
+
+    var ContactsList = [
+        { full_name : 'Alex Johnatan', location : {lat : '', long : ''}, company : 'Twitter, Inc', address : '795 Folsom Ave, Suite 600', city : 'San Francisco', state : 'CA 94107', phone : '(123) 456-7890', role : 'CEO', avatar : 'alex jonathan.jpg'},
+        { full_name : 'Janet Carton', location : {lat : '', long : ''}, company : 'Twitter, Inc', address : '795 Folsom Ave, Suite 600', city : 'San Francisco', state : 'CA 94107', phone : '(123) 456-7890', role : 'Graphics designer', avatar : 'janeth carton.jpg'},
+        { full_name : 'John Smith', location : {lat : '', long : ''}, company : 'Twitter, Inc', address : '795 Folsom Ave, Suite 600', city : 'San Francisco', state : 'CA 94107', phone : '(123) 456-7890', role : 'Graphics designer', avatar : 'john-smith.jpg'},
+        { full_name : 'Michael Zimber', location : {lat : '', long : ''}, company : 'Twitter, Inc', address : '795 Folsom Ave, Suite 600', city : 'San Francisco', state : 'CA 94107', phone : '(123) 456-7890', role : 'Sales manager', avatar : 'michael zimber.jpg'},
+        { full_name : 'Monica Smith', location : {lat : '', long : ''}, company : 'Twitter, Inc', address : '795 Folsom Ave, Suite 600', city : 'San Francisco', state : 'CA 94107', phone : '(123) 456-7890', role : 'Marketing manager', avatar : 'monica smith.jpg'},
+        { full_name : 'Sandra Smith', location : {lat : '', long : ''}, company : 'Twitter, Inc', address : '795 Folsom Ave, Suite 600', city : 'San Francisco', state : 'CA 94107', phone : '(123) 456-7890', role : 'Graphics designer', avatar : 'sandra smith.jpg'}
+        ];
+    
+    var temp;  // for Debuging
+    var editing = false; // When you are editing the card - true, if not - false.
+    var num_edit; // Edited card number
+    var role_text = '', fullname_text = '', company_text = '', address_text = '', city_text = '', phone_text = ''; // Edited fields of the card
+
+
+$(document).ready(function(){  
+    fill_data();    
+    
+    $(".button_new").click(function(e){
+        e.preventDefault();
+        let new_card = ` <div class='profile_box' data-num='${ContactsList.length}'>
+                            
+                            <div class='avatar float_l' > 
+                                <img src="Assets/alex jonathan.jpg" alt="Profile photo" >
+                                <p>role</p>
+                            </div>
+
+                            <div class='float_l'>
+                                <h3>Full name</h3>                        
+                                <span></span><h5 class='geo'></h5>
+                                <h4>Company</h4>
+                                <h5>Address</h5>
+                                <h5>City, State</h5>
+                                <h5>P: Phone</h5>
+                            </div>
+
+                            <div class='edit_delete'>
+                                <span class='delete'></span><span class='edit'></span>
+                            </div>
+
+                        </div> `;
+
+        $('#new_profile').before(new_card);
+        $(`.profile_box[data-num=${ContactsList.length}] .edit`).click(editCard);
+        $(`.profile_box[data-num=${ContactsList.length}] .delete`).click(deleteCard); 
+        ContactsList.push({ full_name : 'Full name', location : {lat : '', long : ''}, company : 'Company', address : 'Address', city : 'City', state : 'State', phone : '(123) 456-7890', role : 'Role', avatar : 'alex jonathan.jpg'});
+    });
+
+    $(".edit").click(editCard);
+    $(".delete").click(deleteCard);
+
+});
+
+
+function editCard(e){
+    e.preventDefault();        
+    if (editing) { // if you press the edit button second time (you already edited the form) then save data and end.
+        endEditCard(num_edit); // save data
+        $(".profile_box").removeClass("shadow-lg p-3 mb-5 bg-white rounded"); 
+        editing = false;               
+        return;
+    }                    
+    editing = true; // Start edit   
+    let elem = e.target.parentElement.parentElement; // Current card
+    num_edit = elem.dataset.num; // number of Visit Card (starting from 0) to edit.
+    $(`.profile_box[data-num=${num_edit}]`).addClass("shadow-lg p-3 mb-5 bg-white rounded");
+     startEditCard(num_edit);
+}
+
+
+function startEditCard(num) {
+    role_text = $(`.profile_box[data-num=${num}] .avatar p`).html();
+    $(`.profile_box[data-num=${num}] .avatar p`).html(`<input type="text" name="role" value="${role_text}">`);
+    
+    fullname_text = $(`.profile_box[data-num=${num}] .fullname`).html();
+    $(`.profile_box[data-num=${num}] .fullname`).html(`<input type="text" name="fullname" value="${fullname_text}">`);
+
+    company_text = $(`.profile_box[data-num=${num}] .company`).html();
+    $(`.profile_box[data-num=${num}] .company`).html(`<input type="text" name="company" value="${company_text}">`);
+
+    address_text = $(`.profile_box[data-num=${num}] .address`).html();
+    $(`.profile_box[data-num=${num}] .address`).html(`<input type="text" name="address" value="${address_text}">`);
+
+    city_text = $(`.profile_box[data-num=${num}] .city`).html();
+    $(`.profile_box[data-num=${num}] .city`).html(`<input type="text" name="city" value="${city_text}">`);
+
+    phone_text = $(`.profile_box[data-num=${num}] .phone`).html();
+    $(`.profile_box[data-num=${num}] .phone`).html(`<input type="text" name="phone" value="${phone_text}">`);
+}
+
+
+function endEditCard(num) {
+    $(`.profile_box[data-num=${num}] .avatar p`).html($('input[name=role]').val());      
+    $(`.profile_box[data-num=${num}] .fullname`).html($('input[name=fullname]').val());     
+    $(`.profile_box[data-num=${num}] .company`).html($('input[name=company]').val());    
+    $(`.profile_box[data-num=${num}] .address`).html($('input[name=address]').val());    
+    $(`.profile_box[data-num=${num}] .city`).html($('input[name=city]').val());    
+    $(`.profile_box[data-num=${num}] .phone`).html($('input[name=phone]').val());    
+}
+
+
+function deleteCard(e) {
+            e.preventDefault();            
+            let elem = e.target.parentElement.parentElement;
+            let num_to_delete = parseInt(elem.dataset.num); // number of Visit Card (starting from 0) to delete.
+            let counter = ContactsList.length - num_to_delete - 1;
+            let next_elem = $(elem).next(); // find next card (for changing number of a card in all next cards)
+            ContactsList.splice(num_to_delete,1); // remove the card from array
+            $(elem).remove(); // Delete the selected card    
+            while(counter){
+                next_elem[0].dataset.num--; // Renumber the card
+                next_elem = $(next_elem).next();
+                counter--;
+            };                
+    }
+
+
+function initGeo() {  
+        let count=0;  
+        ContactsList.forEach(element => { 
+            $('div[data-num=' + count + '] .geo').text("lat: " + element.location.lat + "  long: " + element.location.long); count++;  
+
+        });
+    }
+
+
+function fill_data() {
+    var container = document.getElementById('container');
+    let text = '', last_box = '';
+    let counter = -1;
+    const KEY = "AIzaSyCbU7XQUsLV_MTdl7ds4iDvaSIcgno67V4";
+
+    ContactsList.forEach(element => {        
+        counter++;
+        let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${element.city}&key=${KEY}`;
+        fetch(url)
+            .then(responce => responce.json())
+            .then(data => {
+                let lat, lng;
+                //console.log(data);
+                lat = data.results[0].geometry.location.lat;
+                lng = data.results[0].geometry.location.lng;
+                element.location.lat = lat;
+                element.location.long = lng;                
+            })
+            .catch(err => console.warn(err.message));
+
+        text += ` <div class='profile_box' data-num='${counter}'>
+                    
+                    <div class='avatar float_l' > 
+                        <img src="Assets/${element.avatar}" alt="Profile photo" >
+                        <p class='role'>${element.role}</p>
+                    </div>
+
+                    <div class='float_l'>
+                        <h3 class='fullname'>${element.full_name}</h3>                        
+                        <span></span><h5 class='geo'>${element.location.lat} ${element.location.long}</h5>
+                        <h4 class='company'>${element.company}</h4>
+                        <h5 class='address'>${element.address}</h5>
+                        <h5 class='city'>${element.city}, ${element.state}</h5>
+                        <h5 class='phone'>P: ${element.phone}</h5>
+                    </div>
+
+                    <div class='edit_delete'>
+                        <span class='delete'></span><span class='edit'></span>
+                    </div>
+
+                  </div> `;
+               
+    });
+    
+    last_box = ` <div id='new_profile' class='profile_box'>
+                     <div class="button_new">+</div>
+                 </div> `;
+
+    container.innerHTML = text + last_box;
+    setTimeout(initGeo, 1500);
+}
+
+
+</script>
+
+</html>
