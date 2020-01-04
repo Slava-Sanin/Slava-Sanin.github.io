@@ -1,0 +1,32 @@
+<div class="jumbotron text-center">
+
+
+<fieldset>
+  <legend>{{ data_backup.name }} edit</legend>	
+  
+  <h5>widgetID: {{ data_backup.widgetID }}</h5>
+  
+	<label for="ed_name">Name</label> <input type="text" id="ed_name" name="name" ng-model="data_backup.name"><br><br>
+	<label for="ed_number">Number </label> <input type="text" id="ed_number" name="number" ng-model="data_backup.value"><br><br>
+	
+	<table id="ed_table" class="table table-hover" >
+	  <tbody>
+	    
+	    <tr ng-repeat="widget in data_backup.details" ng-init="pairs_count=$index">
+	      <td ng-repeat="(key,value) in widget" ng-init="pairs[pairs_count]=[key, value];"> {{ $parent.$index + 1 }} </td>
+	      <td> <input type="text" name="ed_name_{{$parent.$index}}" ng-model="pairs[pairs_count][0]" > </td> 
+	      <td> <input type="text" name="ed_value_{{$parent.$index}}" ng-model="pairs[pairs_count][1]" > </td> 
+	      <td> <a ui-sref="edit" class="btn btn-primary" ng-click="addWidgetProps()">+</a> </td>
+          <td> <a ui-sref="edit" class="btn btn-danger ed_btn_minus" ng-click=deleteWidgetProps(pairs_count) >-</a> </td>
+	    </tr>
+
+	  </tbody>
+	</table>
+	
+	<a ui-sref="homepage.details" id="cancel" class="btn btn-primary" ng-click=deleteCash()>Cancel</a>
+    <a ui-sref="homepage.details" id="save" class="btn btn-danger" ng-click=saveWidget()>Save</a>
+
+</fieldset>
+
+	
+</div>

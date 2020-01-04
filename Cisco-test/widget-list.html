@@ -1,0 +1,17 @@
+<h3>Widgets Summary</h3>
+
+<table class="table table-hover">
+
+    <tbody>
+    
+      <tr ng-repeat="widget in widgets" data-widgetID="{{ widget.widgetID }}" data-num="{{ $index }}">
+        <td class="wid_name">{{ widget.name }}</td> 
+        <td><a ui-sref="homepage.details({widgetID: widget.widgetID})" class="btn btn-primary" ng-click="setCurWidgetID(widget.widgetID, $index)">details</a></td>
+        <td><a ui-sref="homepage.remove({widgetID: widget.widgetID})" class="btn btn-danger" ng-click="removeWidget($index)" data-toggle="confirmation">remove</a></td>
+      </tr>
+        
+    </tbody>
+</table>
+
+<a ui-sref="homepage" class="btn btn-primary" ng-click="addWidget()">Add Widget</a>
+

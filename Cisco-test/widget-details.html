@@ -1,0 +1,18 @@
+<h3>Name: Widget {{ widgets[cur_num].name }} details</h3>
+
+<h5>widgetID: {{ widgets[cur_num].widgetID }}</h5>
+
+<h6> Number: {{ toWords(widgets[cur_num].value); }} </h6>
+
+<table class="table table-hover table-striped table-bordered">
+    
+    <tbody ng-repeat="widget in widgets[cur_num].details">
+        
+        <tr ng-repeat="(key,value) in widget">
+             <td class="ed_num">{{ $parent.$index+1 }}</td><td>{{ key }}</td><td>{{ value }}</td>
+        </tr>
+        
+    </tbody>
+    
+</table>
+<a ui-sref="edit" class="btn btn-danger" ng-click="copy_data()">Edit</a>
