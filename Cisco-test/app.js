@@ -93,16 +93,22 @@ widgetApp.controller('mainController', ['$scope', '$state', '$stateParams', func
                     {price: 1000}
                    ]
       }
-    ];
-    
+    ];       
     
     if (typeof $scope.widgets == "undefined") {
+        // Check browser support
+        if (typeof(Storage) !== "undefined") {
+          // Retrieve data
+          if (localStorage.getItem('widget') !== null) {
+          widgets = JSON.parse(localStorage.getItem('widgets'));
+          }
+        } 
         $scope.widgets = widgets; // all widgets
         $scope.cur_num = 0; // current number of widget we works with (starting 0)
         $scope.data_backup = {}; // for backup data before editing properties of widget
         $scope.pairs = []; // for saving new properties of widget
         $scope.toWords = toWords;
-        
+    
     
     $scope.setCurWidgetID = function (_curWidgetID, _curNum){
          $scope.cur_widgetID = _curWidgetID;
@@ -111,6 +117,7 @@ widgetApp.controller('mainController', ['$scope', '$state', '$stateParams', func
     
     $scope.addWidget = function (){
         $scope.widgets.push({ name: '', value: '', widgetID: generateName(), details: [{'A':''},{'B':''},{'C':''},{'D':''},{'E':''}]});
+        $scope.saveLocalStorage();
     };
     
     $scope.removeWidget = function (_curNum){
@@ -125,6 +132,8 @@ widgetApp.controller('mainController', ['$scope', '$state', '$stateParams', func
                 label: 'Yes',
                 action: function(dialog) {
                     $scope.widgets.splice(_curNum,1);
+                    if ($scope.cur_num > ($scope.widgets.length - 1)) $scope.cur_num--;
+                    $scope.saveLocalStorage();
                     dialog.close();
                     $state.reload();
                 }
@@ -144,12 +153,13 @@ widgetApp.controller('mainController', ['$scope', '$state', '$stateParams', func
     $scope.saveWidget = function (){
         event.preventDefault();
         $scope.widgets.splice($scope.cur_num,1); // removing old widget data
-        $scope.widgets.push($scope.data_backup); // add to end of a list new data
+        $scope.data_backup.details.length = 0; // removing all properties of widget
+        $scope.widgets.push($scope.data_backup); // add to end of a list new data 
         $scope.cur_num=$scope.widgets.length - 1; // now current number you working with is last number in the list
-        $scope.widgets[$scope.cur_num].details.length = 0; // removing all properties of widget
         //foreach pair in pairs {}
         $scope.pairs.forEach(function (pair){ $scope.widgets[$scope.cur_num].details.push({ [pair[0]] : pair[1]}); }); // add all new properties of widget to him detail list
         $scope.deleteCash();
+        $scope.saveLocalStorage();
     };
     
     $scope.addWidgetProps = function (){
@@ -158,8 +168,8 @@ widgetApp.controller('mainController', ['$scope', '$state', '$stateParams', func
         $scope.pairs.push(["line" + (num+1), "" + (num+1)]);
 	    let new_row = `<tr>
 	      <td> ${num + 1} </td>
-	      <td> <input type="text" name="ed_name_${num}" ng-model="pairs[${num}][0]" value="${$scope.pairs[num][0]}" ></td> 
-	      <td> <input type="text" name="ed_value_${num}" ng-model="pairs[${num}][1]" value="${$scope.pairs[num][1]}" ></td> 
+	      <td> <input type="text" id="ed_name_${num}" ng-model="pairs[${num}][0]" value="${$scope.pairs[num][0]}" ></td> 
+	      <td> <input type="text" id="ed_value_${num}" ng-model="pairs[${num}][1]" value="${$scope.pairs[num][1]}" ></td> 
 	      <td> <a ui-sref="edit" class="btn btn-primary" >+</a> </td>
           <td> <a ui-sref="edit" class="btn btn-danger ed_btn_minus" >-</a> </td>
 	    </tr>`;
@@ -170,13 +180,13 @@ widgetApp.controller('mainController', ['$scope', '$state', '$stateParams', func
         $('tbody tr:last input:first')[0].oninput = function (event){ 
                 let elem=event.target; // element we are editing now (for key)
                 let n = parseInt($(event.target).parent().prev().text()); // find what is a number of pair that we are editing now
-                $scope.pairs[n-1][0] = elem.value; // saving the new value from INPUT element to array pairs[n][key:value]
+                $scope.pairs[n-1][0] = elem.value; // saving the new value from INPUT element to array pairs[n][key,x]
             }; // set event for change data in pair key
             
         $('tbody tr:last input:last')[0].oninput = function (event){ 
                 let elem=event.target; // element we are editing now (for value)
                 let n = parseInt($(event.target).parent().prev().prev().text()); // find what is a number of pair that we are editing now
-                $scope.pairs[n-1][1] = elem.value; // saving the new value from INPUT element to array pairs[n][key:value]
+                $scope.pairs[n-1][1] = elem.value; // saving the new value from INPUT element to array pairs[n][x,value]
             }; // set event for change data in pair value
 
     };
@@ -184,9 +194,20 @@ widgetApp.controller('mainController', ['$scope', '$state', '$stateParams', func
     $scope.deleteWidgetProps = function (_curNum){
         event.preventDefault();
         _curNum = parseInt(_curNum);
-        $scope.pairs.splice(_curNum,1);
+        if ($scope.pairs.length == 1) {
+            $('tbody .ed_btn_minus').disable;
+            return;
+        }
+        while(_curNum < $scope.pairs.length-1)
+        {
+            $scope.pairs[_curNum][0] = $scope.pairs[_curNum+1][0];
+            $scope.pairs[_curNum][1] = $scope.pairs[_curNum+1][1];
+            $('#ed_name_'+_curNum).val($scope.pairs[_curNum][0]);
+            $('#ed_value_'+_curNum).val($scope.pairs[_curNum][1]);
+            _curNum++;
+        }
+        $scope.pairs.splice($scope.pairs.length-1,1);  
         $('tbody tr').last().remove();
-
         /*
         BootstrapDialog.confirm('Are you sure?', function(result){
             if(result) {
@@ -196,6 +217,7 @@ widgetApp.controller('mainController', ['$scope', '$state', '$stateParams', func
             }
         });
         */
+        //$state.reload();
     };
     
     $scope.deleteCash = function (){
@@ -203,11 +225,15 @@ widgetApp.controller('mainController', ['$scope', '$state', '$stateParams', func
         $scope.data_backup.length = 0; // clear all data from array data_backup for future using in edit
     };
     
-
+    // Store data
+    $scope.saveLocalStorage = function (){
+        localStorage.setItem('widgets', JSON.stringify($scope.widgets));
+    };
+    
     
     }
     
-
+    
 }]);
 
 
@@ -243,11 +269,3 @@ function generateName(){
 	return name;
 
 }
-
-/*
-$('[data-toggle=confirmation]').confirmation({
-  rootSelector: '[data-toggle=confirmation]',
-  // other options
-});
-*/
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
