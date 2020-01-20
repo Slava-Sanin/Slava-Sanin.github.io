@@ -15,15 +15,15 @@
 	      <td ng-repeat="(key,value) in widget" ng-init="pairs[pairs_count]=[key, value]"> {{ pairs_count + 1 }} </td>
 	      <td> <input type="text" id="ed_name_{{pairs_count}}" ng-model="pairs[pairs_count][0]" > </td> 
 	      <td> <input type="text" id="ed_value_{{pairs_count}}" ng-model="pairs[pairs_count][1]" > </td> 
-	      <td> <a ui-sref="edit" class="btn btn-primary" ng-click="addWidgetProps()">+</a> </td>
-          <td> <a ui-sref="edit" class="btn btn-danger ed_btn_minus" ng-click='deleteWidgetProps(pairs_count)' >-</a> </td>
+	      <td> <button class="btn btn-primary" ng-click="addWidgetProps()">+</button> </td>
+          <td> <button class="btn btn-danger ed_btn_minus" ng-click='deleteWidgetProps(pairs_count)' >-</button> </td>
 	    </tr>
 
 	  </tbody>
 	</table>
 	
-	<a ui-sref="homepage.details" id="cancel" class="btn btn-primary" ng-click=deleteCash()>Cancel</a>
-    <a ui-sref="homepage.details" id="save" class="btn btn-danger" ng-click=saveWidget()>Save</a>
+	<a ui-sref="homepage.details" id="cancel" class="btn btn-primary" ng-click="deleteCash()">Cancel</a>
+    <a ui-sref="homepage.details" id="save" class="btn btn-danger" ng-click="saveWidget()">Save</a>
 
 </fieldset>
 

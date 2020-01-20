@@ -99,8 +99,9 @@ widgetApp.controller('mainController', ['$scope', '$state', '$stateParams', func
         // Check browser support
         if (typeof(Storage) !== "undefined") {
           // Retrieve data
-          if (localStorage.getItem('widget') !== null) {
+          if (localStorage.getItem('widgets') !== null) {
           widgets = JSON.parse(localStorage.getItem('widgets'));
+          console.log(widgets);
           }
         } 
         $scope.widgets = widgets; // all widgets
@@ -154,7 +155,7 @@ widgetApp.controller('mainController', ['$scope', '$state', '$stateParams', func
         event.preventDefault();
         $scope.widgets.splice($scope.cur_num,1); // removing old widget data
         $scope.data_backup.details.length = 0; // removing all properties of widget
-        $scope.widgets.push($scope.data_backup); // add to end of a list new data 
+        $scope.widgets.push($scope.data_backup); // add new data to end of a list  
         $scope.cur_num=$scope.widgets.length - 1; // now current number you working with is last number in the list
         //foreach pair in pairs {}
         $scope.pairs.forEach(function (pair){ $scope.widgets[$scope.cur_num].details.push({ [pair[0]] : pair[1]}); }); // add all new properties of widget to him detail list
@@ -170,12 +171,12 @@ widgetApp.controller('mainController', ['$scope', '$state', '$stateParams', func
 	      <td> ${num + 1} </td>
 	      <td> <input type="text" id="ed_name_${num}" ng-model="pairs[${num}][0]" value="${$scope.pairs[num][0]}" ></td> 
 	      <td> <input type="text" id="ed_value_${num}" ng-model="pairs[${num}][1]" value="${$scope.pairs[num][1]}" ></td> 
-	      <td> <a ui-sref="edit" class="btn btn-primary" >+</a> </td>
-          <td> <a ui-sref="edit" class="btn btn-danger ed_btn_minus" >-</a> </td>
+	      <td> <button class="btn btn-primary" >+</button> </td>
+          <td> <button class="btn btn-danger ed_btn_minus" >-</button> </td>
 	    </tr>`;
         $('tbody').last().append(new_row);
-        $('tbody tr:last td:last').prev().find('a').click(function(){ $scope.addWidgetProps() }); // set event for button '+'
-        $('tbody tr:last td:last a:last').click(function(){ $scope.deleteWidgetProps(num) }); // set event for button '-'
+        $('tbody tr:last td:last').prev().find('button').click(function(){ $scope.addWidgetProps() }); // set event for button '+'
+        $('tbody tr:last td:last button:last').click(function(){ $scope.deleteWidgetProps(num) }); // set event for button '-'
 
         $('tbody tr:last input:first')[0].oninput = function (event){ 
                 let elem=event.target; // element we are editing now (for key)
