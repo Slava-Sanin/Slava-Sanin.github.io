@@ -96,10 +96,12 @@ nav{
 
 #section2{
     min-height: 521px;
-    background-color: white;    
+    background-color: white; 
+    margin-bottom: -99px;   
 }
 #sec2_container{
-    padding: 0 158px;
+    margin: 0 auto;
+    max-width: fit-content; 
 }
 .more{
     padding: 124px 34px 124px 22px;
@@ -109,7 +111,7 @@ nav{
 .comp{
     float: right;
     padding: 81px 0 0 34px;
-    margin-right: 23px;
+    margin-right: 17px;
 }
 #sec2_container > div.more > p{
     padding-top: 43px;
@@ -119,8 +121,10 @@ nav{
 }
 .trava{
     z-index: 10;
-    margin-top: -88px;
-    position: absolute;
+    position: relative;
+    top: -94px;
+    overflow: hidden;
+    clear: both;
 }
 
 
@@ -162,13 +166,15 @@ nav{
 
 
 #section4{
-    padding: 18px 167px 0;
+    padding: 18px 0 0;
     min-height: 600px;
     box-sizing: border-box;
 }
 #section4 .wrapper{
     display: flex;
     flex-wrap: wrap;
+    max-width: max-content;
+    margin: 0 auto;
 }
 #section4 > div > div:nth-child(1){
     width: 642px;
@@ -186,7 +192,6 @@ nav{
     text-align: right;
 }
 #section4 .green_block{
-    width: 434px;
     padding: 19px;
     margin-left: 36px;
     display: flex;
@@ -195,7 +200,7 @@ nav{
     font-size: 18px;
     font-weight: 100;
     color: #707980;
-    width: 365px;
+    max-width: 414px;
     text-align: right;  
 }
 #section4 .leaf{
@@ -209,7 +214,7 @@ nav{
     margin-left: 31px;
 }
 #section4 .green{
-    margin-left: 16px;
+    margin-left: 44px;
     margin-top: 74px;
 }
 
@@ -412,11 +417,9 @@ nav{
 
 
 footer{
-    background-color: #2f333d;
-    height: 344px;
+    background-color: #2f333d;    
     width: 100%;
-    box-sizing: border-box;
-    position: relative;
+    box-sizing: border-box;    
 }
 footer .wrapper{
     margin: 45px 10% 0px;
@@ -424,7 +427,6 @@ footer .wrapper{
     display: inline-flex;
 }
 .endless{
-    position: absolute;
     clear: both;
     background-color: #e7e7e7;
     text-transform: uppercase;
@@ -433,8 +435,7 @@ footer .wrapper{
     font-size: 10px;
     height: 51px;
     width: 100%;
-    margin-bottom: 0px;
-    bottom: 0px;
+    margin-top: 13px;
 }
 .endless p{    
     line-height: 5.1;
