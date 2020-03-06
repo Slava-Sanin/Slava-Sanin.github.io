@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/jquery-3.4.0.min.js"> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>   
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="switch.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- <script src="./components/inputswitch/InputSwitch.js"></script> -->
+    <!-- <link rel="stylesheet" href="./components/inputswitch/InputSwitch.css"> -->
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="lab">Images gallery</div>
+
+        <div id="img_preview" class="img_preview">
+            <img src="#" alt="">
+        </div>
+
+        <div class="tools">
+
+            <div id="featured">
+                <label class="switch">
+                    <input id="featured_switch" type="checkbox" checked>
+                    <span class="slider round"></span><span class="featured_text">featured</span>
+                </label>
+            </div>            
+            
+            <span id="delete_btn">
+                <i class="fa fa-trash-o" style="font-size:24px"></i>
+            </span>   
+
+            <span id="edit_btn">
+                <i class="fa fa-edit" style="font-size:24px"></i>
+            </span>         
+            
+        </div>
+
+        <div class="img_container">            
+    
+            <div class="img_mini">
+                <div id="btn_plus" class="wrapper_btn_plus">
+                    <i class="fa fa-plus" style="font-size: 24px; font-weight: 100;"></i>
+                </div>
+            </div>
+
+        </div>
+        <br><br>
+    
+
+    <!-- //////////////////////////// Form to choose images ///////////////////////////////////////////////////// -->
+
+        <div id="form_choose_image">
+            
+            <form id="formData" action="http://server:8080/action_page.php" method="post" enctype="multipart/form-data">
+                <div class="lab">Product details:</div>
+                
+                <input type="text" name="title" id="title" placeholder="Title" value="" required>
+                <br><br>                                
+
+                <textarea type="text" name="description" id="description" placeholder="Description" rows="5" cols="33" value="Description" >
+                </textarea>
+                <br><br>
+
+                <input type="date" name="date" id="date" placeholder="Date">
+                <br><br>
+
+                <input type="file" size="5" name="files" id="files" multiple>
+                <br><br>                
+                
+                <input type="submit" value="Submit">
+                <br><br>
+
+                <input type="hidden" name="main_image" id="main_image" value="">
+                
+            </form>
+            
+
+        </div>
+
+    <!-- //////////////////////////// End Form to choose images ///////////////////////////////////////////////////// -->
+
+    </div>
+    <script>
+        var max_images = 5;
+        var maxFileSize = 10 * 1024 * 1024;        
+        var added_images = 0;
+        var featured_image = 0;
+        var f = document.createElement("INPUT");
+        var new_images = [];
+
+        f.setAttribute("type", "file");
+        f.accept = "image/*";
+
+        btn_plus.onclick = ()=>{ 
+            if (added_images == max_images) {
+                alert("You can't add more then " + max_images + " images!");                
+                return;
+            }
+            f.click();
+        };
+
+
+        f.onchange = ()=>{             
+                            if (f.files.length && f.files[0]) {
+
+                                console.log(f.files[0].name); 
+                                if ( !f.files[0].type.match(/image\/(jpeg|jpg|png|gif)/) ) {
+                                alert( 'The image must be in format: jpg, png or gif!' );
+                                return;
+                                }
+
+                                if (f.files[0].size > maxFileSize) {
+                                    alert( 'The size of the image must be not bigger then 10Mb!' );
+                                    return;
+                                }  
+
+                                var reader = new FileReader();
+                                reader.onload = (e)=>{ add_New_Image(e); }
+                                reader.readAsDataURL(f.files[0]);
+
+                                //formData.append('files.files[]', f.files[0], f.files[0].name);                        
+                                //files.files[] = f.files[0]; 
+                                                        
+                            }
+                         };
+        
+
+        function add_New_Image(e) {
+            $('#img_preview img').attr('src', e.target.result);
+            $('span.img_mini.active').removeClass('active');
+
+            new_images.push(document.createElement("IMG"));
+            new_images[added_images].setAttribute("src", e.target.result);
+            new_images[added_images].setAttribute("alt", f.files[0].name);
+            new_images[added_images].addEventListener("click", setActiveImg);
+            $('div.img_mini').before($('<span class="img_mini active"></span>').prepend(new_images[added_images]));
+
+            added_images++;
+            if (added_images == 1) {
+                featured_switch.checked = true;                                                
+                featured_image = 1;
+                $('.img_mini.active').addClass("featured");
+            }
+            else {
+                featured_switch.checked = false; 
+            }
+        }
+
+        delete_btn.onclick = ()=>{
+            if (added_images==1) {
+                featured_switch.checked = false;
+                featured_image = 0;
+                $('span.img_mini.active').remove();
+                $('#img_preview').empty();
+                new_images.splice(added_images-1,1);
+                added_images--;
+                return;
+            }
+
+            if ($('span.img_mini.active').hasClass("featured")) {                            
+                featured_image = 1;
+                $('span.img_mini.active').remove();                                
+                $('span.img_mini:first').addClass('featured');                
+            }
+            else {
+                $('span.img_mini.active').remove();
+            } 
+            
+            new_images.splice(added_images-1,1);
+            added_images--;            
+            $('span.img_mini img:last').click(); 
+            console.log(new_images);
+        };
+
+        
+        function setActiveImg() {
+             console.log("Active image selected");            
+             $('.img_mini.active').removeClass('active');
+             $(this).parent().addClass('active'); 
+             if ($(this).parent().hasClass("featured")) {
+                featured_switch.checked = true;
+             }
+             else featured_switch.checked = false;
+             $('#img_preview img')[0].setAttribute("src", this.src);
+         }
+        
+         featured_switch.checked = false;
+
+         featured_switch.onchange = ()=>{
+           $('.img_mini.featured').removeClass('featured') ;
+           $('.img_mini.active').addClass('featured');
+           featured_image = $('.img_mini.active').index() + 1;
+           console.log("featured image: ", featured_image);
+        }
+
+    </script>
+</body>
+</html>
