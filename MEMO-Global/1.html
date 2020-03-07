@@ -64,7 +64,7 @@
 				<!--Name can't be blank-->
 				$('#name').on('input', function() {
 					var input=$(this);
-					var re = /^[a-zA-Z +$/;
+					var re = /^[a-zA-Z]+$/;
 					var is_name=re.test(input.val());
 					//var is_name=input.val();
 					if(is_name){input.removeClass("invalid").addClass("valid");}
