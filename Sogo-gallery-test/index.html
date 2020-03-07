@@ -72,7 +72,7 @@
 
                 <input type="date" name="date" id="date" placeholder="Date">
                 <br><br>
-
+                
                 <input type="file" size="5" name="files" id="files" multiple>
                 <br><br>                
                 
@@ -127,8 +127,9 @@
                                 reader.onload = (e)=>{ add_New_Image(e); }
                                 reader.readAsDataURL(f.files[0]);
 
-                                //formData.append('files.files[]', f.files[0], f.files[0].name);                        
-                                //files.files[] = f.files[0]; 
+                                //formData.append("files.files[]", f.files[0], f.files[0].name);                        
+                                //formData.append("files.files[]", f.files[0]);
+                                //files.files = f.files[0]; 
                                                         
                             }
                          };
@@ -201,7 +202,30 @@
            featured_image = $('.img_mini.active').index() + 1;
            console.log("featured image: ", featured_image);
         }
+        /*
+        $('input[type="submit"]').click(function (e){
+            e.preventDefault();
+            let allFormData = new FormData(formData);
+            // new_images = JSON.stringify(new_images);
+            allFormData.append('allFiles', new_images);
 
+            $.ajax({
+                type: "POST",
+                url: 'action_page.php',
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                data: allFormData,
+                success: function() {
+                    //$(formData).trigger('reset');  //при успешной отправке сбрасываем форму в дефолтное состояние
+                    alert('Success');
+                    console.log(data);
+                }
+            });
+
+        });
+        */
     </script>
 </body>
 </html>
+

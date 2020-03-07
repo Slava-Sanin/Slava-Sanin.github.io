@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+///////////////////////////////////////////////////////
 $title = $description = $date = "";
 $files = "";
 $main_image = "";
@@ -25,13 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   } else {
     $date = test_input($_POST["date"]);
   }
-
+  /*
   if (empty($_POST["files"])) {
     array_push($errors, "Files is required");
   } else {
     $files = test_input($_POST["files"]);
   }
-
+  */
   if (empty($_POST["main_image"])) {
     array_push($errors, "Main image is required");
   } else {
@@ -44,9 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     //exit;
   
 }
-
-///////////////////////////////////////////////////////
 ?>
+///////////////////////////////////////////////////////
 <style>
   table, th, td {
     border: solid;
@@ -60,16 +59,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 <br><br>
 
 <table>
+  <tbody>
   <th>שם הקובץ</th><th>גודל</th><th>סיומת</th><th>תקין</th>
-  <tr>    
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>תמונה עברה ולידציה</td>
-  </tr>  
-</table>
+///////////////////////////////////////////////////////
+<?php  
+# Загрузка нескольких файлов
+$uploads_dir = '/uploads';
 
-<?php
+foreach ($_FILES["files"]["error"] as $key => $error) {
+    if ($error == UPLOAD_ERR_OK) {
+        echo "<tr><td>$key</td><td>$error</td></tr>";
+        $tmp_name = $_FILES["files"]["tmp_name"][$key];
+        $name = $_FILES["files"]["name"][$key];
+        move_uploaded_file($tmp_name, "$uploads_dir/$name");
+        echo '<tr>';
+        echo '<td>'. $name .'</td>';
+        echo '<td>'. $_FILES["files"]["size"][$key] . '</td>';
+        echo '<td>'. $_FILES["files"]["type"][$key] . '</td>';
+        echo '<td>תמונה עברה ולידציה</td>';
+        echo '</tr>';
+    }
+}
+echo '</tbody>';
+echo '</table>';
+////////////////////////////////////////////////////////
+echo '<pre>';
+print_r($_POST);
+echo '<br><br>';
+print_r($_FILES);
+echo '<br><br>';
+//var_dump($_FILES);
+echo '</pre>';
 ///////////////////////////////////////////////////////
 function test_input($data) {
     $data = trim($data);
@@ -78,6 +98,4 @@ function test_input($data) {
     return $data;
   }
 ///////////////////////////////////////////////////////
-
-
 ?>
