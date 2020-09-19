@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+  <title>Exam Page</title> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="client-exam-code.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+
+
+            <div class="grid-container-th"><div class="grid-item"></div><div class="grid-item">country</div><div class="grid-item">city</div><div class="grid-item">population</div></div>
+            <!--
+            <div class="grid-container"><th></th><th>country</th><th>city</th><th>population</th></div>
+            -->
+
+
+    </div>
+</body>
+
+<script>
+    var list = [];
+
+    $(document).ready(function(){
+
+        $.getJSON("https://public.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop&q=&sort=population&facet=country&refine.country=cn", function(result){
+            $.each(result.records, function(k, v){
+                list.push({k,v})
+                $('.grid-container-th').after("<div class='grid-container-main'><div class='grid-item'>"+k+"</div><div class='grid-item'>"+v.fields.country+"</div><div class='grid-item'>"+v.fields.city+"</div><div class='grid-item'>"+v.fields.population+"</div></div>");
+            });
+            console.log(list);
+            $('.grid-container-main').click(function(){
+                $('.grid-container-ext').remove();
+                let n = this.children[0].textContent;
+                if (n == "") return;
+                let latitude = list[n].v.fields.latitude;
+                let longitude = list[n].v.fields.longitude;
+                let region = list[n].v.fields.region;
+                let info_box = "<div class='grid-container-ext'><div class='grid-item'>latitude</div><div class='grid-item'>longitude</div><div class='grid-item'>region</div>";
+                   info_box += "<div class='grid-item'>"+latitude+"</div><div class='grid-item'>"+longitude+"</div><div class='grid-item'>"+region+"</div></div>";
+                $(this).after(info_box);
+                //$(this).hide();
+                console.log(n);
+                console.log(list[n].v.fields.latitude);
+                console.log(list[n].v.fields.longitude);
+                console.log(list[n].v.fields.region);
+            });
+
+
+        });
+
+    });
+
+    function tr_clicked(t){
+        $(t).after("<tr class='col-12' style='border: 1px solid gray; margin: 1px; '><td class='col-6'>aaaaa</td><td class='col-6'>bbbbb</td></tr>");
+        console.log("clicked");
+    }
+
+</script>
+</html>
