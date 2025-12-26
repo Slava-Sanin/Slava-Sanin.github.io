@@ -1555,6 +1555,9 @@ body[data-apps-theme="t5"] #alContainer .net_icon .linkedin,
 body[data-apps-theme="t5"] .uapp-icon.linkedin:after{
 	background-image: url('../img/icons/linkedin.png');
 }
+body[data-apps-theme="t5"] .uapp-icon.googleplay:after{
+	background-image: url('../img/icons/GooglePlay_72x72.jpg');
+}
 body[data-apps-theme="t5"] #share_app_odnoklassniki,
 body[data-apps-theme="t5"] #active-apps-list li[app="odnoklassniki"] span.active-apps-icon,
 body[data-apps-theme="t5"] #apps-list-mobile .net_icon .odnoklassniki,
